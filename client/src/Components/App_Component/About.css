@@ -1,0 +1,53 @@
+.first-img{
+    width: 1065px;
+    margin: 45px 275px -45px 235px;
+    opacity: 1;
+}
+.about-h1{
+    margin: 15px 70px;
+    font-size: 40px;
+    color: #58D5DA;
+}
+.about-p{
+    font-size: 20px;
+    margin: 5px 75px 0px 75px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #F5F5F5;
+}
+.teammate{
+    margin-top: 15px;
+}
+.team-img{
+    width: 200px;
+    border-radius: 10%;
+    margin: 12px 12px 12px 22px;
+}
+.team{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 60px;
+     border-radius: 10px;
+}
+.team-p{
+    margin-top: 20px;
+    
+}
+.hu{
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin: 5px 70px;
+    font-family: 'Prata', serif;
+    color: #58D5DA;
+}
+
+.team-img:hover{
+    transition: 0.4s;
+    transform: scale(1.1);
+}
+.team-img:not(:hover) {
+    transition: 0.4s;
+    transform: scale(1);
+}
+
+

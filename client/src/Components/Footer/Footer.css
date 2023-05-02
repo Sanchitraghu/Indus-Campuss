@@ -1,0 +1,38 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer-icons {
+  width: 40px;
+  margin: 58px 109px 0px 0px;
+}
+.x {
+  width: 35px;
+  height: 35px;
+  margin-top: 22px;
+}
+
+.contact-footer {
+  display: flex;
+  justify-content: space-around;
+}
+.email-subs {
+  background-color: #222929;
+  padding: 14px 30px;
+  border: 3px solid #58D5DA;;
+  border-radius: 6px;
+  outline: none;
+  color: #f5f5f5;
+}
+.subscribe {
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+.details {
+  margin-right: 30px;
+}

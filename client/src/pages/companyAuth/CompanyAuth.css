@@ -1,0 +1,83 @@
+
+h2{
+    color: #ffffff;
+    font-size: 25px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.login-heading{
+    background-color: #58D5DA;
+    padding: 12px 100px;
+    border-radius: 5px;
+
+}
+
+.container{
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.input{
+    margin: 5px;
+    padding: 12px 100px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background-color:#001D1E;
+    color: #ffffff;
+    border: 2px solid #58D5DA;
+}
+.right1{
+    border: 2px solid #58D5DA;
+    padding: 5px 65px;
+    border-radius: 5px;
+}
+.btn{
+    padding: 12px 162px;
+    margin-top: 60px;
+    background-color:#58D5DA;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #ffffff;
+}
+.dont{
+    color: #58D5DA;
+    cursor: pointer;
+}
+
+::placeholder{
+    color:#ffffff;
+}
+
+/* ABout CSS */
+.img-login:hover{
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+.img-login:not(:hover){
+    transition: 0.3s;
+    transform: scale(1);
+}
+.btn:hover{
+    transition: 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.btn:not(:hover){
+    transition: 0.3s;
+    transform: scale(1);
+}
+.input:focus{
+   transition: 0.1s;
+   transform: scale(1.03);
+   outline: none
+}
+.p22{
+    text-align: center;
+}
+.h22{
+    text-align: center;
+}

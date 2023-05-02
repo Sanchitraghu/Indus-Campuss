@@ -1,0 +1,43 @@
+.userProject {
+  min-height: 80px;
+  width: 215%;
+  display: flex;
+  align-items: center;
+  background-color: #001d1e;
+  border-bottom: solid 1px #58d5da;
+}
+
+.deleteImg {
+  width: 30px;
+  padding-left: 55px;
+  cursor: pointer;
+}
+
+.userPotedProject {
+  margin-top: -30px;
+}
+.Modal {
+  text-align: center;
+}
+.Modal h2 {
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin: 5px 70px;
+  font-family: "Prata", serif;
+  color: #58d5da;
+}
+
+.confirm-delete {
+  padding: 7px 17px;
+  margin: 4px 8px 0px 0px;
+  color: #001d1e;
+  font-weight: 600;
+  font-size: medium;
+  border: 2px solid #001d1e;
+  border-radius: 8px;
+  background-color: #58d5da;
+}
+
+.confirm-delete:hover {
+  cursor: pointer;
+}

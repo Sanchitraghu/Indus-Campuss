@@ -1,0 +1,94 @@
+.main-nav{
+    min-height:50px;
+    width: 100%;
+    margin: 0% auto;
+    border-top: solid 3px #5CE1E6;
+    box-shadow: 0px 1px 5px #00000033;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #001D1E;
+  }
+.navbar{
+    height: 100%;
+    min-width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.nav-logo{
+    padding: 5px 25px;
+    width: 300px;
+  }
+
+.nav-item{
+    margin: 0px 6px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    color:#ffffff;
+    transition: 0.3s;
+}
+
+.nav-links{
+    text-align: center;
+    width: 180px;
+    height: 29px;
+    border: 2px solid #58D5DA;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 6px 12px;
+}
+
+.institute{
+    background-color: #58D5DA;
+    color: #001D1E;
+}
+.company-btn{
+    color: #58D5DA;
+    font-weight: 500;
+}
+
+.log-out-btn{
+    padding: 7px 17px;
+    margin: 4px 0px 0px 0px;
+    color: #58D5DA;
+    font-weight: 600;
+    font-size: medium;
+    border: 2px solid #58D5DA;
+    border-radius: 10px;
+    background-color: #001D1E;
+}
+
+.institute:hover{
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+.company-btn:hover{
+    transition: 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.nav-btn:hover{
+    transition: 0.3s;
+   color: #58D5DA;
+}
+
+.log-out-btn:hover{
+    transition: 0.3s;
+    background-color: #58D5DA;
+    color: #001D1E;
+    cursor: pointer;
+}
+
+.log-out-btn:not(:hover){
+    transition: 0.3s;
+    background-color: #001D1E;
+    color: #58D5DA;
+}
+

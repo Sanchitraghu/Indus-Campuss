@@ -1,0 +1,94 @@
+.h111{
+    text-align: center;
+    font-size: 50px;  
+    margin: 40px;
+}
+.ex-img{
+    width: 50rem;
+    margin: 85px 0px 0px 387px;
+    box-shadow: 0 8px 16px 0 #58D5DA;
+    border-radius: 8px;
+}
+.how-to-explore{
+    display: flex;
+    justify-content: space-evenly;
+}
+.card-img{
+    width: 90px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+.card-heading{
+    text-align: center;
+    margin-top: 20px;
+}
+.card{
+    width: 250px;
+    margin: 5px;
+    border-radius: 5px; 
+}
+.p-card{
+    text-align: center;
+}
+
+
+.ex-join{
+    margin: 50px 0px 40px 685px;
+    width: 500px;
+}
+.link-join{
+    color: #ffffff;
+    padding: 14px 28px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+
+
+.p1{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.company-sedan-img{
+    width: 180px;
+    height: 60px;
+    margin-top: 25px;
+}
+.company-sedan2-img{
+    width: 150px;
+    height: 50px;
+    margin: 30px;
+}
+.company-mar1{
+    margin-left:160px ;
+}
+.company-mar2{
+    margin-right:160px ;
+}
+.company-img{
+    width: 130px;
+}
+
+/* Psudo classes */
+.card:hover {
+    box-shadow: 0 8px 16px 0 #58D5DA;
+    transition: 0.4s;
+    transform: scale(1.05);
+  }
+.card:not(:hover) {
+    transition: 0.4s;
+    transform: scale(1);
+  }
+
+.link-join:hover{
+    transition: 0.3s;
+    background-color:#58D5DA;
+    color: #001D1E;
+}
+.link-join:not(:hover){
+    transition: 0.3s;
+    color: #ffffff;
+}
+  
