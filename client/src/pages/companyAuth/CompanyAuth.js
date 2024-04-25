@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import "./CompanyAuth.css";
 import { useNavigate } from "react-router-dom";
 import { logIn, signUp } from "../../api/auth";
+import UserTypeSelector from "../LoginAScard/UserTypeSelector";
 
 const CompanyAuth = () => {
   let [isSignUp, setSignUp] = useState(false);
@@ -55,6 +56,9 @@ const CompanyAuth = () => {
         <div className="left1">
           <About />
         </div>
+        {/* <div>
+          <UserTypeSelector/>
+        </div> */}
         <div className="right1">
           <h2 className="login-heading">{login ? "LOG IN" : "SIGN UP"} HERE</h2>
           <form onSubmit={handleSubmit}>

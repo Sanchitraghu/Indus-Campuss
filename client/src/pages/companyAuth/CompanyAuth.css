@@ -16,6 +16,7 @@ h2{
 .container{
     margin-top: 120px;
     display: flex;
+    flex-direction : row;
     justify-content: space-evenly;
 }
 .input{
@@ -53,6 +54,11 @@ h2{
 }
 
 /* ABout CSS */
+.img-login{
+    display : block;
+    margin : auto;
+}
+
 .img-login:hover{
     transition: 0.3s;
     transform: scale(1.2);

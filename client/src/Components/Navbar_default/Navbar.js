@@ -39,9 +39,12 @@ const Navbar = () => {
         </Link>
 
         {!data || data === null ? (
-          <Link className="nav-item nav-links company-btn" to="/companyauth">
-            Join As Company
-          </Link>
+          // <Link className="nav-item nav-links company-btn" to="/companyauth">
+          //   Join As Company
+          // </Link>
+          <Link className="nav-item nav-links company-btn" to="/LoginAScard">
+          Join As Company
+        </Link>
         ) : (
           <>
             <Link style={{ textDecoration: "none" }} to="/dashboard">
