@@ -9,7 +9,6 @@ import Postproject from '../pages/PostProject/Postproject';
 import DisplayProject from '../pages/Explore/DisplayProject';
 import Dashboard from '../pages/Dashboard/Dashboard';
 import AddDescriptionForm from '../pages/Dashboard/AddDescriptionForm';
-import LoginAScard from '../pages/LoginAScard/LoginAScard';
 
 const Root = () => {
   return (
@@ -18,8 +17,7 @@ const Root = () => {
       <Route exact path="/about" element={<About />} />
       <Route exact path="/explore" element={<Explore />} />
       <Route exact path="/howitworks" element={<HowItWorks />} />
-      <Route exact path="/companyauth" element={<CompanyAuth />} />
-      <Route exact path="/LoginAScard" element={<LoginAScard/>} />
+      <Route exact path="/auth" element={<CompanyAuth />} />
       <Route exact path="/postproject" element={<Postproject />} />
       <Route exact path="/project/:id" element={<DisplayProject />} />
       <Route exact path="/dashboard" element={<Dashboard />} />

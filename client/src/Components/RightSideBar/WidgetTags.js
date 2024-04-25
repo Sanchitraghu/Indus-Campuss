@@ -59,4 +59,4 @@ const WidgetTags = () => {
       )
 }
 
-export default WidgetTags
+export default WidgetTags;

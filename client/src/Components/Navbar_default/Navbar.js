@@ -42,7 +42,7 @@ const Navbar = () => {
           // <Link className="nav-item nav-links company-btn" to="/companyauth">
           //   Join As Company
           // </Link>
-          <Link className="nav-item nav-links company-btn" to="/LoginAScard">
+          <Link className="nav-item nav-links company-btn" to="/auth">
           Join As Company
         </Link>
         ) : (

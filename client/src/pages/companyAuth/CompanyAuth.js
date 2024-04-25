@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import "./CompanyAuth.css";
 import { useNavigate } from "react-router-dom";
 import { logIn, signUp } from "../../api/auth";
-import UserTypeSelector from "../LoginAScard/UserTypeSelector";
+import LoginAs from "../LoginAScard/LoginAs";
 
 const CompanyAuth = () => {
   let [isSignUp, setSignUp] = useState(false);
@@ -13,6 +13,7 @@ const CompanyAuth = () => {
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
+  const [selectedUserType, setSelectedUserType] = useState(null);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -51,80 +52,88 @@ const CompanyAuth = () => {
 
   return (
     <div>
-      <Navbar login={login} handleClick={handleClick} />
+      <Navbar
+        login={"Change User"}
+        handleClick={() => setSelectedUserType(null)}
+      />
+      {
+        !selectedUserType ? <LoginAs setUser={setSelectedUserType} /> :
+
       <div className="container">
         <div className="left1">
           <About />
         </div>
-        {/* <div>
-          <UserTypeSelector/>
-        </div> */}
-        <div className="right1">
-          <h2 className="login-heading">{login ? "LOG IN" : "SIGN UP"} HERE</h2>
-          <form onSubmit={handleSubmit}>
-            {isSignUp && (
+
+          <div className="right1">
+            <h2 className="login-heading">
+              {selectedUserType ?? "Keka"} Login
+            </h2>
+            <form onSubmit={handleSubmit}>
+              {isSignUp && (
+                <div>
+                  <label htmlFor="Display">
+                    <input
+                      className="input"
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="FULL NAME"
+                      autoComplete="off"
+                      onChange={(e) => {
+                        setName(e.target.value);
+                      }}
+                      required
+                      />
+                  </label>
+                </div>
+              )}
               <div>
-                <label htmlFor="Display">
+                <label htmlFor="email">
                   <input
                     className="input"
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="FULL NAME"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="EMAIL"
                     autoComplete="off"
                     onChange={(e) => {
-                      setName(e.target.value);
+                      setEmail(e.target.value);
                     }}
                     required
-                  />
+                    />
                 </label>
               </div>
-            )}
-            <div>
-              <label htmlFor="email">
-                <input
-                  className="input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="EMAIL"
-                  autoComplete="off"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  required
-                />
-              </label>
-            </div>
-            <div>
-              <label htmlFor="password">
-                <input
-                  className="input"
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="PASSWORD"
-                  autoComplete="off"
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
-                  required
-                />
-              </label>
-              <p onClick={handleClick} className="dont p22">
-                {login
-                  ? "Don't have an account ?"
-                  : "Already have an account ?"}
-              </p>
-            </div>
-            <div>
-              <button type="submit" className="btn">
-                {login ? "Log In" : "Sign Up"}
-              </button>
-            </div>
-          </form>
-        </div>
+              <div>
+                <label htmlFor="password">
+                  <input
+                    className="input"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="PASSWORD"
+                    autoComplete="off"
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                    required
+                    />
+                </label>
+                <p onClick={handleClick} className="dont p22">
+                  {login
+                    ? "Don't have an account ?"
+                    : "Already have an account ?"}
+                </p>
+              </div>
+              <div>
+                <button type="submit" className="btn">
+                  {login ? "Log In" : "Sign Up"}
+                </button>
+              </div>
+            </form>
+          </div>
+      
       </div>
+  }
     </div>
   );
 };
