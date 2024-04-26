@@ -43,7 +43,7 @@ const Navbar = () => {
           //   Join As Company
           // </Link>
           <Link className="nav-item nav-links company-btn" to="/auth">
-          Join As Company
+          Join Us
         </Link>
         ) : (
           <>

@@ -23,15 +23,15 @@ const PersonalDashboard = () => {
         <>
           <div className="user-details">
             <h4>
-              Company Name : <p>{data?.result?.name}</p>
+              {data?.result?.loginAs} Name : <p>{data?.result?.name}</p>
             </h4>
             <h4>
-              Company Email : <p>{data?.result?.email}</p>
+              {data?.result?.loginAs} Email : <p>{data?.result?.email}</p>
             </h4>
           </div>
           <div className="dashDescription">
             <div className="desedit">
-              <h2>Company Description :</h2>
+              <h2>{data?.result?.loginAs} Description :</h2>
               <button onClick={handleEditClick} className="Review-btn edit">
                 Edit
               </button>

@@ -4,7 +4,7 @@ import users from "../models/auth.js";
 import mongoose from "mongoose";
 
 export const signup = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, loginAs } = req.body;
   try {
     const existinguser = await users.findOne({ email });
     if (existinguser) {
@@ -15,6 +15,7 @@ export const signup = async (req, res) => {
       name,
       email,
       password: hashedPassword,
+      loginAs
     });
     const token = jwt.sign(
       { email: newUser.email, id: newUser._id },

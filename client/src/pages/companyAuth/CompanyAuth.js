@@ -24,7 +24,7 @@ const CompanyAuth = () => {
 
     if (isSignUp) {
       if (!name) return alert("Enter a Name to continue");
-      let data = { name, email, password };
+      let data = { name, email, password, loginAs: selectedUserType };
       signUp(data, (err, res) => {
         if (err) return alert(err?.response?.data?.message);
         dispatch({ type: "SET_USER_DATA", data: res.data });
@@ -56,13 +56,13 @@ const CompanyAuth = () => {
         login={"Change User"}
         handleClick={() => setSelectedUserType(null)}
       />
-      {
-        !selectedUserType ? <LoginAs setUser={setSelectedUserType} /> :
-
-      <div className="container">
-        <div className="left1">
-          <About />
-        </div>
+      {!selectedUserType ? (
+        <LoginAs setUser={setSelectedUserType} />
+      ) : (
+        <div className="container">
+          <div className="left1">
+            <About />
+          </div>
 
           <div className="right1">
             <h2 className="login-heading">
@@ -83,7 +83,7 @@ const CompanyAuth = () => {
                         setName(e.target.value);
                       }}
                       required
-                      />
+                    />
                   </label>
                 </div>
               )}
@@ -100,7 +100,7 @@ const CompanyAuth = () => {
                       setEmail(e.target.value);
                     }}
                     required
-                    />
+                  />
                 </label>
               </div>
               <div>
@@ -116,7 +116,7 @@ const CompanyAuth = () => {
                       setPassword(e.target.value);
                     }}
                     required
-                    />
+                  />
                 </label>
                 <p onClick={handleClick} className="dont p22">
                   {login
@@ -131,9 +131,8 @@ const CompanyAuth = () => {
               </div>
             </form>
           </div>
-      
-      </div>
-  }
+        </div>
+      )}
     </div>
   );
 };
