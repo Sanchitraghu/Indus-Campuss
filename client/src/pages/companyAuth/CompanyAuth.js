@@ -59,7 +59,7 @@ const CompanyAuth = () => {
       {!selectedUserType ? (
         <LoginAs setUser={setSelectedUserType} />
       ) : (
-        <div className="container">
+        <div className="container1">
           <div className="left1">
             <About />
           </div>

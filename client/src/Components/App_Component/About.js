@@ -74,7 +74,7 @@ const About = () => {
         <div className="teammate">
           <h1 className="hu">SWAPNIL PAWAR (Web Content Writer)</h1>
           <p className="about-p team-p">
-            He is a skilled web content writer who combines creativity,
+            He is a skilled front-end developer & web content writer who combines creativity,
             technological know-how, and strategic thinking in a unique way. Has
             as a good understanding of how to create engaging and persuasive
             content that appeals to the target audience.

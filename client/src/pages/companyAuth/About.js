@@ -5,13 +5,16 @@ import "../companyAuth/CompanyAuth.css"
 const About = () => {
   return (
     <div style={{margin:'auto', justifyContent: 'center'}}>
-         <h1 className='h22'>
+         <h2 className='h22'>
               Welcome To Our Community
-           </h1>
+           </h2>
            <p className='p22'>
               A Whole New Productive Journey Starts Here
            </p>
-           <img className='img-login'  src={image} alt="img" />
+           <div className='img-login-container'>
+           <img   src={image} alt="img" />
+           </div>
+           
     </div>
   )
 }

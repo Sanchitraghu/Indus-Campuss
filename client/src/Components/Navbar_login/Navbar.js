@@ -11,7 +11,7 @@ const Navbar = (props) => {
      <img className='nav-logo' src={logo} alt="logo" />
    </Link>
 
-  <Link onClick={props.handleClick}  className="nav-item nav-links company-btn" to="/auth">Change User</Link> 
+  <Link onClick={props.handleClick}  className="company-btn" to="/auth">Change User</Link> 
     </div>
    </nav>
   )
