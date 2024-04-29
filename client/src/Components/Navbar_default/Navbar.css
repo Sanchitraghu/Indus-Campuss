@@ -11,7 +11,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #001D1E;
+    /* background: #001D1E; */
+    background : transparent;
+    backdrop-filter: blur(20px);
   }
 .navbar{
     height: 100%;
@@ -33,8 +35,20 @@
     text-decoration: none;
     color:#ffffff;
     transition: 0.3s;
+    display : flex;
+    flex-direction :row;
+    justify-content : space-evenly;
+    align-item : centre;
+    column-gap : 30px;
 }
-
+.nav-btn{
+    align-item : centre;
+    text-decoration : none;
+    color:#fff;
+    text-align: center;
+    margin-top : 10px;
+    font-size : large;
+}
 .nav-links{
     text-align: center;
     width: 180px;
@@ -50,8 +64,15 @@
     color: #001D1E;
 }
 .company-btn{
+    padding: 7px 30px;
+    margin: 4px 0px 0px 0px;
     color: #58D5DA;
     font-weight: 500;
+    font-size: medium;
+    text-decoration : none;
+    border: 2px solid #58D5DA;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .log-out-btn{

@@ -1,0 +1,51 @@
+.card--container{
+    margin : 150px auto 10px auto;
+    display:flex;
+    column-gap : 2px;
+    justify-content :space-evenly;
+    align-items : centre;
+    text-decoration : none;
+
+}
+
+.profile-card{
+    padding : 0px 20px 0px 20px;
+    display : flex;
+    flex-direction : column;
+    justify-content : centre;
+    height : 65vh;
+    width : 20vw;
+    /* border : 2px solid rgba(255,255,255,0.1); */
+    border-radius : 10px;
+    
+    
+}
+
+.profile-card:hover{
+    transition : ease-in-out 0.1s;
+    transform : scale(1.1);
+    box-shadow: 0 8px 16px 0 #58D5DA;
+}
+
+.profil-card-image {
+    width : 100%;
+    height :60%;
+}
+
+/* .profile-card-image img{
+    width : 100%;
+    height : 100%;
+    object-fit : fill;
+
+} */
+
+.card-heading1{
+    margin-top : 22px;
+    font-size : 40px;
+}
+.p-card1{
+    padding-right : 10px;
+    text-align : centre;
+    color : rgba(88,213,218,0.75)
+
+}

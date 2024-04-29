@@ -26,22 +26,22 @@ const How_it_Works = () => {
     <img className='ex-img' src={image} alt="explore-img" />
     <h1 className='h111'>How To Start</h1>
     <div className="how-to-explore">
-      <div className="card">
+      <div className="card1">
             <img className='card-img' src={createImg} alt="create" />
             <h2 className='card-heading'>Create Account</h2>
             <p className='p-card'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nulla quis repellendus!</p>
       </div>
-      <div className="card">
+      <div className="card1">
       <img className='card-img' src={profileImg} alt="profile-img" />
             <h2 className='card-heading'>Complete Profile</h2>
             <p className='p-card'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nulla quis repellendus!</p>
       </div>
-      <div className="card">
+      <div className="card1">
       <img className='card-img' src={searchImg} alt="search-img" />
             <h2 className='card-heading'>Find Each Other</h2>
             <p className='p-card'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nulla quis repellendus!</p>
       </div>
-      <div className="card">
+      <div className="card1">
       <img className='card-img' src={collabImg} alt="collab" />
             <h2 className='card-heading'>Collaborate</h2>
             <p className='p-card'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nulla quis repellendus!</p>

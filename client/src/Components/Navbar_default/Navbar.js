@@ -25,16 +25,18 @@ const Navbar = () => {
   return (
     <nav className="main-nav">
       <div className="navbar">
-        <Link to="/" className="nav-item">
+        <div> <Link to="/" className="nav-item">
           <img className="nav-logo" src={logo} alt="logo" />
-        </Link>
-        <Link className="nav-item nav-btn" to="/explore">
+        </Link></div>
+       
+        <div className="nav-item">
+        <Link className=" nav-btn" to="/explore">
           Explore
         </Link>
-        <Link className="nav-item nav-btn" to="/about">
+        <Link className=" nav-btn" to="/about">
           About Us
         </Link>
-        <Link className="nav-item nav-btn" to="/howitworks">
+        <Link className=" nav-btn" to="/howitworks">
           How It Works
         </Link>
 
@@ -42,7 +44,7 @@ const Navbar = () => {
           // <Link className="nav-item nav-links company-btn" to="/companyauth">
           //   Join As Company
           // </Link>
-          <Link className="nav-item nav-links company-btn" to="/auth">
+          <Link className=" company-btn" to="/auth">
           Join Us
         </Link>
         ) : (
@@ -51,10 +53,10 @@ const Navbar = () => {
               <Avatar
                 character={data.result.name.charAt(0).toUpperCase()}
                 py="5px"
-                px="13px"
+                px="10px"
                 backgroundColor="#58D5DA"
                 radius="50%"
-                marginLeft="250px"
+                marginLeft="50px"
                 marginTop="5px"
                 border="3px solid #58D5DA"
                 color="#001D1E"
@@ -67,6 +69,7 @@ const Navbar = () => {
             </button>
           </>
         )}
+        </div>
       </div>
     </nav>
   );

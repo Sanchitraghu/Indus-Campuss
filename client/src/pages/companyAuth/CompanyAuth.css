@@ -1,7 +1,7 @@
 
 h2{
     color: #ffffff;
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 50px;
     text-align: center;
 }
@@ -13,11 +13,18 @@ h2{
 
 }
 
-.container{
-    margin-top: 120px;
+.container1{
+    box-sizing : content-box;
+    margin:  100px auto ;
+    width : 80vw;
+    padding : 0px;
     display: flex;
     flex-direction : row;
     justify-content: space-evenly;
+    border:  2px  solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+   
+   
 }
 .input{
     margin: 5px;
@@ -26,18 +33,38 @@ h2{
     border-radius: 8px;
     margin-top: 20px;
     margin-left: 10px;
-    background-color:#001D1E;
+    background-color:rgba(88,213,218,0.2);
     color: #ffffff;
-    border: 2px solid #58D5DA;
+    border: 1px solid rgba(	88,213,218,0.75);
 }
+.left1{
+    padding: ;
+    width : 60%;
+}
+
+
 .right1{
-    border: 2px solid #58D5DA;
+  
     padding: 5px 65px;
-    border-radius: 5px;
+    background : rgba(255,255,255,0.1);
+    backdrop-filter: blur(50px);
+    border-radius : 0px 20px 20px 0px;
+    /* width : 100px; */
 }
+
+.login-heading{
+    margin-top : 20px;
+    padding-top : 5px ;
+    background : none;
+    font-size : 40px;
+    padding : 20px ;;
+}
+
 .btn{
-    padding: 12px 162px;
-    margin-top: 60px;
+    padding: 12px 152px;
+    margin-top: 40px;
+    margin-bottom : 10px;
+    margin-left : 10px;
     background-color:#58D5DA;
     border-radius: 8px;
     font-weight: 500;
@@ -54,9 +81,13 @@ h2{
 }
 
 /* ABout CSS */
-.img-login{
-    display : block;
-    margin : auto;
+.img-login-container{
+    padding : 20px;
+}
+.img-login-container img {
+    height : 100%;
+    width : 100%;
+    object-fit : fill;
 }
 
 .img-login:hover{
@@ -71,6 +102,7 @@ h2{
     transition: 0.3s;
     transform: scale(1.1);
     cursor: pointer;
+    background : #58D5DA;
 }
 .btn:not(:hover){
     transition: 0.3s;
@@ -86,4 +118,5 @@ h2{
 }
 .h22{
     text-align: center;
+    font-size : 40px;
 }

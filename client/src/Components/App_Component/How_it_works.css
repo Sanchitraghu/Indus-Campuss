@@ -5,9 +5,9 @@
 }
 .ex-img{
     width: 50rem;
-    margin: 85px 0px 0px 387px;
+    margin: 120px 300px 20px 250px;
     box-shadow: 0 8px 16px 0 #58D5DA;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 .how-to-explore{
     display: flex;
@@ -22,10 +22,15 @@
     text-align: center;
     margin-top: 20px;
 }
-.card{
+.card1{
     width: 250px;
     margin: 5px;
     border-radius: 5px; 
+}
+.card1:hover{
+    transform : scale(1.1);
+    transition : ease-in-out 0.3s;
+    box-shadow: 0 8px 16px 0 #58D5DA;
 }
 .p-card{
     text-align: center;
