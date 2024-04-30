@@ -24,7 +24,7 @@ const Dashboard = () => {
         <LeftSideBar />
         <div className="home-container-2">
           <PersonalDashboard />
-          <RightSideBar />
+          {/* <RightSideBar /> */}
         </div>
       </div>
     </div>
