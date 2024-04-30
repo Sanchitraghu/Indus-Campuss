@@ -56,6 +56,15 @@ export const postRequestedProjectCompany = async (req, res) => {
     if (!project) {
       return res.status(404).json({ message: "Project Not Found" });
     }
+
+  let alreadyRequested =  project?.companyRequestedProject?.find((element)=> {
+      return element.universityEmail === details?.requestedCollegeEmail;
+    })
+
+    if(alreadyRequested) {
+      return res.status(404).json({ message: "Project already Requested" });
+    }
+
     let object = {
       pId: projectId,
       projectName: details.projectTitle,
@@ -77,3 +86,23 @@ export const postRequestedProjectCompany = async (req, res) => {
     return res.status(500).json({ message: "INternal server error" });
   }
 };
+
+
+export const approveOrRejectProjectRequest = async (req,res) => {
+  let {id,state,updatedProjectId} = req.body;
+  const project = await Projects.findById(id);
+  let approvedIndex = project?.companyRequestedProject?.findIndex((element) => {
+     return element.id === updatedProjectId;
+  });
+  
+  const object = project?.companyRequestedProject[approvedIndex];
+  
+  object.state=state;
+  
+  project?.companyRequestedProject?.splice(approvedIndex,1,object);
+
+   await Projects.findByIdAndUpdate(id, {
+    $set : {companyRequestedProject : project?.companyRequestedProject}
+  })
+  res.status(200).json({message:"Successfully executed request"})
+}

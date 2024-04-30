@@ -43,10 +43,13 @@ const ProjectDetails = () => {
     };
     postRequestedProjectForCompany(projectDetails, (err, res) => {
       if (err) {
-        console.log(err);
+        alert("Already Requested For This project")
         return;
       }
-      console.log(res);
+      if(res.status === 200) {
+        alert("Request Sent to the Company for this project")
+        return;
+      }
     });
   };
 

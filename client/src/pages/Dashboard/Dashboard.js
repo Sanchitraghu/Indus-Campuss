@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '../../Components/Navbar_default/Navbar';
 import LeftSideBar from '../../Components/LeftSideBar/LeftSideBar';
-import RightSideBar from '../../Components/RightSideBar/RightSideBar';
 import PersonalDashboard from './PersonalDashboard';
 import './Dashboard.css';
 import { getDescription } from '../../api/project';
@@ -24,7 +23,6 @@ const Dashboard = () => {
         <LeftSideBar />
         <div className="home-container-2">
           <PersonalDashboard />
-          {/* <RightSideBar /> */}
         </div>
       </div>
     </div>

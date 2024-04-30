@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import UserPostedProject from "./userPostedProject";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserProjects } from "../../../api/project";
@@ -38,7 +38,7 @@ const UserProject = () => {
               </>
               <>
                 <div className="dashDescription">
-                  <h2>Requested Projects :</h2>
+                  <h2 className="fs-2 mb-4">Requested Projects :</h2>
                 </div>
                 {projectList.data
                   .map((project) => {
