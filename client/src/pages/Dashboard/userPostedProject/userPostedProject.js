@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import "./userProject.css";
 import deleteImg from "../../../assets/delete.png";
 import {
   deleteProject,
@@ -9,6 +8,7 @@ import {
   getUserProjects,
 } from "../../../api/project";
 import { useDispatch, useSelector } from "react-redux";
+import "./userProject.css";
 
 const UserPostedProject = ({ project }) => {
   const dispatch = useDispatch();
@@ -66,7 +66,7 @@ const UserPostedProject = ({ project }) => {
           <div>
             <img
               className="deleteImg"
-              style={{ width: "30px", paddingLeft: "55px" }}
+              style={{ width: "90px", paddingLeft: "55px", marginBottom:"10px" }}
               src={deleteImg}
               alt="Delete"
               onClick={() => setModal(true)}

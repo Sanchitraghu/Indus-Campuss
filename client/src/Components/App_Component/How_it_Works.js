@@ -51,7 +51,7 @@ const How_it_Works = () => {
     {
       User===null ?
     <div className='ex-join'>
-    <Link className="nav-item link-join nav-links company-btn" to="/companyauth">Join Now</Link> 
+    <Link className="nav-item link-join nav-links company-btn" to="/auth">Join Now</Link> 
     </div>
     :
     <></>

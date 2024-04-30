@@ -9,6 +9,27 @@ const ProjectSchema = mongoose.Schema({
   email: { type: String },
   userId: { type: String },
   postedOn: { type: Date, default: Date.now },
+  companyRequestedProject: {
+    type: [
+      {
+        pId: { type: String },
+        state: { type: String, default: "pending" },
+        projectName: { type: String },
+        universityEmail: { type: String },
+        universityId: { type: String },
+      },
+    ],
+  },
+  universityRequestedProject: {
+    type: [
+      {
+        pId: { type: String },
+        state: { type: String, default: "pending" },
+        projectName: { type: String },
+        companyEmail: { type: String },
+      },
+    ],
+  },
 });
 
 export default mongoose.model("Project", ProjectSchema);

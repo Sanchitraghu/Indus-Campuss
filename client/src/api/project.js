@@ -26,3 +26,9 @@ export const getUserProjects = (_id, cb) => {
     .then((res) => cb(null, res))
     .catch((err) => cb(err, null));
 };
+
+export const postRequestedProjectForCompany = (obj, cb) => {
+  API.post("project/postrequestedproject",obj)
+    .then((res) => cb(null, res))
+    .catch((err) => cb(err, null));
+};

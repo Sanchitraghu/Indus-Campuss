@@ -14,7 +14,7 @@ const HomeMainBar = () => {
   const check = () => {
     if (data === null) {
       alert("First login and signup before posting project");
-      navigate("/companyauth");
+      navigate("/auth");
     } else {
       navigate("/postproject");
     }

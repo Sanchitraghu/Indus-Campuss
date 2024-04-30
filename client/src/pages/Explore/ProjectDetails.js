@@ -6,6 +6,7 @@ import Navbar from "../../Components/Navbar_default/Navbar";
 import copy from "copy-to-clipboard";
 import moment from "moment";
 import { markupText } from "../../utils";
+import { postRequestedProjectForCompany } from "../../api/project";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -14,13 +15,12 @@ const ProjectDetails = () => {
   const location = useLocation();
 
   const { data } = useSelector((state) => state.projectReducer);
-  console.log(data);
   const { data: User } = useSelector((state) => state.authReducer);
   const navigate = useNavigate();
   const check = () => {
     if (User === null) {
       alert("First login and signup before posting project");
-      navigate("/companyauth");
+      navigate("/auth");
     } else {
       navigate("/postproject");
     }
@@ -29,6 +29,25 @@ const ProjectDetails = () => {
   const handleShare = () => {
     copy(url + location.pathname);
     alert("Copied url : " + url + location.pathname);
+  };
+
+  const handleUniversityProjectRequest = (project) => {
+    let projectDetails = {
+      projectId: project?._id,
+      details: {
+        companyEmail: project?.email,
+        projectTitle: project?.projectTitle,
+        requestedCollegeEmail: User?.result?.email,
+        requestedCollegeId: User?.result?._id,
+      },
+    };
+    postRequestedProjectForCompany(projectDetails, (err, res) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log(res);
+    });
   };
 
   return (
@@ -42,7 +61,7 @@ const ProjectDetails = () => {
             {data
               .filter((question) => question._id === id)
               .map((question) => {
-                console.log(question.projectBody);
+                console.log(question);
                 return (
                   <div key={question._id}>
                     <section className="question-details-container">
@@ -63,6 +82,19 @@ const ProjectDetails = () => {
                                 Share
                               </button>
                             </div>
+
+                            {User?.result?.loginAs === "College" && (
+                              <div>
+                                <button
+                                  onClick={(e) => {
+                                    handleUniversityProjectRequest(question);
+                                  }}
+                                  type="buttonn"
+                                >
+                                  Request Project
+                                </button>
+                              </div>
+                            )}
                             <div>
                               <p>
                                 posted {moment(question.postedOn).fromNow()}

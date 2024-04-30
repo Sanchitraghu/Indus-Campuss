@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import UserPostedProject from "./userPostedProject";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserProjects } from "../../../api/project";
+import RequestedProject from "../RequestedProjects/RequestedProject";
 
 const UserProject = () => {
   const User = useSelector((state) => state.authReducer);
@@ -24,15 +25,31 @@ const UserProject = () => {
             <h1 style={{ color: "#58D5DA" }}>Loading...</h1>
           ) : (
             <>
-              <div className="dashDescription">
-                <h2>
-                  {loginAs === "College" ? "Requested" : "Posted"} Projects :
-                </h2>
-              </div>
-              <p>{projectList?.data?.length} Projects</p>
-              {projectList.data.map((project) => (
-                <UserPostedProject key={project._id} project={project} />
-              ))}
+              <>
+                <div className="dashDescription">
+                  <h2>
+                    {loginAs === "College" ? "Requested" : "Posted"} Projects :
+                  </h2>
+                </div>
+                <p>{projectList?.data?.length} Projects</p>
+                {projectList.data.map((project) => (
+                  <UserPostedProject key={project._id} project={project} />
+                ))}
+              </>
+              <>
+                <div className="dashDescription">
+                  <h2>Requested Projects :</h2>
+                </div>
+                {projectList.data
+                  .map((project) => {
+                    // <UserPostedProject key={project._id} project={project} />
+                    return project.companyRequestedProject;
+                  })
+                  .map((item) =>{ 
+                   return item.map((reqestedProject) => {
+                      return <RequestedProject {...reqestedProject} />
+                  })})}
+              </>
             </>
           )}
         </div>

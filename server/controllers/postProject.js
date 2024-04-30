@@ -48,3 +48,32 @@ export const getUserProjects = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+export const postRequestedProjectCompany = async (req, res) => {
+  const { projectId, details } = req.body;
+  try {
+    const project = await Projects.findById(projectId);
+    if (!project) {
+      return res.status(404).json({ message: "Project Not Found" });
+    }
+    let object = {
+      pId: projectId,
+      projectName: details.projectTitle,
+      universityEmail: details.requestedCollegeEmail,
+      universityId: details.requestedCollegeId,
+    };
+    const requestedProjects = project.companyRequestedProject;
+    requestedProjects.push(object);
+     await Projects.findByIdAndUpdate(
+      projectId,
+      {
+        $set: { companyRequestedProject: requestedProjects },
+      }
+    );
+
+    return res.status(200).json({ message: "Successfully added" });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: "INternal server error" });
+  }
+};
