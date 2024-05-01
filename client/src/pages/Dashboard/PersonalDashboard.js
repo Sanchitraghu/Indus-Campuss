@@ -54,7 +54,7 @@ const PersonalDashboard = () => {
               }}
             ></p>
           </div>
-          <UserProject />
+         {data?.result?.loginAs !== "Student" && <UserProject />} 
         </>
       )}
     </div>

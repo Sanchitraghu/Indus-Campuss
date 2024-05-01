@@ -32,3 +32,9 @@ export const postRequestedProjectForCompany = (obj, cb) => {
     .then((res) => cb(null, res))
     .catch((err) => cb(err, null));
 };
+
+export const approveOrRejectRequestedProject = (data,cb) => {
+  API.patch("project/approveproject",data)
+  .then((res) => cb(null,res))
+  .catch((err)=> cb(err,null))
+}
