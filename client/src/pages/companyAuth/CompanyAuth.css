@@ -21,11 +21,12 @@ h2{
     display: flex;
     flex-direction : row;
     justify-content: space-evenly;
-    border:  2px  solid rgba(255,255,255,0.5);
+    border:  2px  solid rgba(88, 213, 218,0.5);
     border-radius: 20px;
-   
-   
+
 }
+
+
 .input{
     margin: 5px;
     padding: 12px 100px;
@@ -34,7 +35,7 @@ h2{
     margin-top: 20px;
     margin-left: 10px;
     background-color:rgba(88,213,218,0.2);
-    color: #ffffff;
+    color: #58d5da;
     border: 1px solid rgba(	88,213,218,0.75);
 }
 .left1{
@@ -46,7 +47,7 @@ h2{
 .right1{
   
     padding: 5px 65px;
-    background : rgba(255,255,255,0.1);
+    background : rgba(88, 213, 218,0.2);
     backdrop-filter: blur(50px);
     border-radius : 0px 20px 20px 0px;
     /* width : 100px; */
@@ -111,7 +112,10 @@ h2{
 .input:focus{
    transition: 0.1s;
    transform: scale(1.03);
-   outline: none
+   outline: none;
+   border: 2px solid rgba(	88,213,218,0.75);
+  
+
 }
 .p22{
     text-align: center;

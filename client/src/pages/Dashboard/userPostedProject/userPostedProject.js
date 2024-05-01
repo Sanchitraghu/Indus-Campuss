@@ -48,11 +48,7 @@ const UserPostedProject = ({ project }) => {
     });
   };
   return (
-    <div className="display-question-container userProject">
-      <div className="display-votes-ans">
-        <p>{project.jobType}</p>
-        <p>Benefit</p>
-      </div>
+    <div className="display-question-container userProject" style={{display :"flex",flexDirection:"column"}}>
       <div className="display-question-details">
         <Link to={`/project/${project._id}`} className="question-title-link">
           {project.projectTitle}
@@ -77,6 +73,10 @@ const UserPostedProject = ({ project }) => {
           </div>
         </div>
         {showModal && <Modal />}
+      </div>
+      <div className="display-votes-ans" style={{width:"100%"}}>
+        <p style={{display:"inline",paddingLeft:"5px", marginBottom : "10px"}}>{project.jobType}</p>
+        <p style={{display:"inline", marginBottom : "10px"}}>  Benefit</p>
       </div>
     </div>
   );

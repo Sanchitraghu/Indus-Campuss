@@ -13,7 +13,7 @@ const LeftSideBar = () => {
         </NavLink>
         <div className="side-nav-div">
           <div>
-            <p>PUBLIC</p>
+            <p style={{margin:"4px 0px"}}>PUBLIC</p>
           </div>
           <NavLink to="/Questions" className="side-nav-links" activeClass="active"></NavLink>
           {data === null ? (
@@ -22,12 +22,12 @@ const LeftSideBar = () => {
             </NavLink>
           ) : (
             <NavLink to="/dashboard" className="side-nav-links" activeClass="active" style={{ paddingLeft: '20px' }}>
-              <p>Dashboard</p>
+              <p style={{margin:"10px 0px"}}>Dashboard</p>
             </NavLink>
           )}
 
           <NavLink to="/explore" className="side-nav-links" activeClass="active" style={{ paddingLeft: '20px' }}>
-            <p>Explore Project</p>
+            <p style={{margin:"10px 0px"}}>Explore Project</p>
           </NavLink>
         </div>
       </nav>

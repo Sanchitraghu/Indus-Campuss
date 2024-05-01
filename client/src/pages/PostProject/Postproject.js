@@ -81,12 +81,12 @@ const Postproject = () => {
     <div className="ask-question">
       <Navbar />
       <div className="ask-ques-container">
-        <h1 style={{ color: "#58D5DA" }}>Post Project</h1>
+        <h1 style={{ color: "#58D5DA",margin : "40px 0px" }}>Post Project</h1>
         <form onSubmit={handleSubmit}>
           <div className="ask-form-container">
             <label htmlFor="ask-ques-title">
               <h4 className="h444">Project Title</h4>
-              <p>Be specific about your project title</p>
+              <p style ={{marginBottom:"10px"}}>Be specific about your project title</p>
               <input
                 type="text"
                 id="ask-ques-title"
@@ -99,7 +99,7 @@ const Postproject = () => {
             </label>
             <label htmlFor="ask-ques-body">
               <h4 className="h444">Description of project</h4>
-              <p>
+              <p style ={{marginBottom:"10px"}}>
                 Include all the information someone would need to answer your
                 question
               </p>
@@ -139,7 +139,7 @@ const Postproject = () => {
 
             <label htmlFor="ask-ques-tags">
               <h4 className="h444">Skills</h4>
-              <p>
+              <p style ={{marginBottom:"10px"}}>
                 Add up to 5 skills that is needed for this project by giving
                 single space
               </p>

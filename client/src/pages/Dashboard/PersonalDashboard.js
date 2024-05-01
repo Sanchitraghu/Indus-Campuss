@@ -31,10 +31,10 @@ const PersonalDashboard = () => {
                 <img src ={DBprofileIcon} style={{width :"100%", height:"100%", objectFit:"contain"}} alt="DB-profile-logo"/>
               </div>
               <div className="Name-Email" style={{width:"80%",background :"rgba(0, 29, 30, 1)",boxShadow: "0 5px 15px #58D5DA", position:"absolute", left :"18%",right : "20%", bottom:"-23%", backdropFilter:"blur",borderRadius:'20px',}}>
-                <p className="client-name" style={{margin :"5px 0px 1px 40px", fontSize:"20px"}}>
+                <p className="client-name" style={{margin :"7px 0px 1px 40px", fontSize:"20px", color:"#58d5da"}}>
                 {data?.result?.loginAs} Name : <span>{data?.result?.name}</span>
                 </p>
-                <p className="mail-address" style={{margin :"1px 0px 5px 40px",fontSize:"20px"}}>
+                <p className="mail-address" style={{margin :"1px 0px 8px 40px",fontSize:"20px", color:"#58d5da"}}>
                 {data?.result?.loginAs} Email : <span>{data?.result?.email}</span>
                 </p>
               </div>
@@ -43,7 +43,7 @@ const PersonalDashboard = () => {
 
           <div className="dashDescription">
             <div className="desedit">
-              <h2>{data?.result?.loginAs} Description :</h2>
+              <h2 style={{paddingLeft:"5px"}}>{data?.result?.loginAs} Description :</h2>
               <button onClick={handleEditClick} className="Review-btn edit">
                 Edit
               </button>

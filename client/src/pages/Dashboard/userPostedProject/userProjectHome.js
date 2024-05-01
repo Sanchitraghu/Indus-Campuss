@@ -19,7 +19,7 @@ const UserProject = () => {
 
   return (
     <div>
-      <div className="main-bar userPotedProject">
+      <div className="main-bar1 userPotedProject">
         <div>
           {projectList.data === null ? (
             <h1 style={{ color: "#58D5DA" }}>Loading...</h1>
@@ -27,11 +27,11 @@ const UserProject = () => {
             <>
               <>
                 <div className="dashDescription">
-                  <h2>
+                  <h2 style={{paddingLeft:"5px"}}>
                     {loginAs === "College" ? "Requested" : "Posted"} Projects :
                   </h2>
                 </div>
-                <p>{projectList?.data?.length} Projects</p>
+                <p style={{paddingLeft:"5px"}}>{projectList?.data?.length} Projects</p>
                 {projectList.data.map((project) => (
                   <UserPostedProject key={project._id} project={project} />
                 ))}

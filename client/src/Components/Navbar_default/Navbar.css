@@ -3,7 +3,7 @@
     width: 100%;
     margin: 0% auto;
     border-top: solid 3px #5CE1E6;
-    box-shadow: 0px 1px 5px #00000033;
+    box-shadow: 0px 10px 20px #00000033;
     position: fixed;
     top: 0%;
     left: 0%;
@@ -11,7 +11,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: #001D1E; */
     background : transparent;
     backdrop-filter: blur(20px);
   }

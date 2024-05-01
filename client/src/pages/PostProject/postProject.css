@@ -18,6 +18,12 @@
     box-shadow: 0 5px 15px #58D5DA;
 }
 
+.ask-form-container{
+    display : flex;
+    flex-direction : column;
+    gap : 30px;
+}
+
 .ask-form-container label h4{
     margin-bottom: 0%;
 }

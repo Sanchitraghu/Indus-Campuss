@@ -1,11 +1,11 @@
 .left-sidebar{
-    width: 164px;
-    box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    width: 200px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
     transition: box-shadow ease-in-out 0.1s ,transform ease-in-out 0.1s;
     transform: translateZ(0);
     box-sizing: border-box;
-    font-size: 13px;
-    margin-top: 20px;
+    font-size: 15px;
+    margin-top: 15px;
 }
 
 .side-nav{
@@ -34,8 +34,11 @@
 .active{
     font-weight: bolder;
     color: black;
-    background-color: #222929;
+    background-color:rgba(88, 213, 218,0.2);
     border-right: solid 3px #58D5DA;
+    border-bottom-left-radius : 10px;
+    border-top-left-radius : 10px;
+
 }
 
 /* 37:52 sidebar completed*/
