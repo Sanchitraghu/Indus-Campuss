@@ -55,7 +55,7 @@ const UserPostedProject = ({ project }) => {
         </Link>
         <div className="display-tags-time">
           <div className="display-tags">
-            {project.projectTags.map((tag) => (
+            {project?.projectTags?.map((tag) => (
               <p key={tag}>{tag}</p>
             ))}
           </div>

@@ -133,6 +133,11 @@
     color: #B2B2B2;
 }
 
+.question-actions-user button:hover{
+    background: rgba(88, 213, 218,0.3);
+    color:rgba(88, 213, 218,1);
+}
+
 .display-ans{
     padding-bottom: 20px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.112);

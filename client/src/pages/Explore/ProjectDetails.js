@@ -80,25 +80,29 @@ const ProjectDetails = () => {
                             ))}
                           </div>
                           <div className="question-actions-user">
-                            <div>
-                              <button onClick={handleShare} type="buttonn">
+                            
+                            <div style={{display:"flex",flexDirection:"column",rowGap:"5px"}}>
+                            <div style={{border:"2px solid rgba(88, 213, 218)", borderRadius:"5px",textAlign:"centre"}}>
+                              <button onClick={handleShare} type="buttonn" style={{width :"100%"}}>
                                 Share
                               </button>
                             </div>
-
                             {User?.result?.loginAs === "College" && (
-                              <div>
+                              <div style={{border:"2px solid rgba(88, 213, 218)", borderRadius:"5px",textAlign:"centre"}}>
                                 <button
                                   onClick={(e) => {
                                     handleUniversityProjectRequest(question);
                                   }}
-                                  type="buttonn"
+                                  type="buttonn"  style={{width :"100%"}}
                                 >
                                   Request Project
                                 </button>
                               </div>
                             )}
+                            </div>
+
                             <div>
+                             <div>
                               <p>
                                 posted {moment(question.postedOn).fromNow()}
                               </p>
@@ -124,7 +128,10 @@ const ProjectDetails = () => {
                               >
                                 {question.email}
                               </a>
+                              </div>
                             </div>
+                           
+                           
                           </div>
                         </div>
                       </div>

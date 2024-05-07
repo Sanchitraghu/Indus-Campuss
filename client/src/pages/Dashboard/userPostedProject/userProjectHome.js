@@ -82,7 +82,7 @@ const UserProject = () => {
                   ))}
                 </>
               )}
-              <>
+              {/* <>
                 <div className="dashDescription">
                   <h2 style={{paddingLeft:"5px"}}>
                     {loginAs === "College" ? "Requested" : "Posted"} Projects :
@@ -92,7 +92,7 @@ const UserProject = () => {
                 {projectList.data.map((project) => (
                   <UserPostedProject key={project._id} project={project} />
                 ))}
-              </>
+              </> */}
               <>
                 <div className="dashDescription">
                   <h2 className="fs-2 mb-4">Requested Projects :</h2>
