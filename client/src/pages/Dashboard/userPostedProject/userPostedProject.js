@@ -14,7 +14,7 @@ const UserPostedProject = ({ project }) => {
   const dispatch = useDispatch();
   const User = useSelector((state) => state.authReducer);
   const [showModal, setModal] = useState(false);
-  const _id = User.data.result._id;
+  const _id = User?.data?.result?._id;
 
   const Modal = () => {
     return (

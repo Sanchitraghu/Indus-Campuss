@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar_login/Navbar";
 import About from "./About";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./CompanyAuth.css";
 import { useNavigate } from "react-router-dom";
 import { logIn, signUp } from "../../api/auth";
@@ -17,6 +17,11 @@ const CompanyAuth = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const {data:USER} = useSelector(state => state.authReducer)
+  
+  if(Boolean(USER)) {
+    navigate("/dashboard")
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();

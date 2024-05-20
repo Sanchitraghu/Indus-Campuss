@@ -10,7 +10,7 @@ const HomeMainBar = () => {
   const navigate = useNavigate();
 
   const projectList = useSelector((state) => state.projectReducer);
-
+  const { data: User } = useSelector((state) => state.authReducer);
   const check = () => {
     if (data === null) {
       alert("First login and signup before posting project");
@@ -28,13 +28,16 @@ const HomeMainBar = () => {
         ) : (
           <h1>All Projects</h1>
         )}
-        <button
+     {
+    User?.result?.loginAs ==="Company" &&
+     <button
           style={{ marginTop: "64px" }}
           onClick={check}
           className="Review-btn"
         >
           Post Project
         </button>
+     }   
       </div>
 
       <div>

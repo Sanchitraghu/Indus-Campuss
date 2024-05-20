@@ -5,7 +5,6 @@ import sanchitImg from "../../assets/Team/img1.jpg";
 import swapnilImg from "../../assets/Team/img2.jpg";
 import shobhitImg from "../../assets/Team/img3.png";
 import sahilImg from "../../assets/Team/img4.JPG";
-import sawiImg from "../../assets/Team/img5.jpg";
 import Footer from "../Footer/Footer";
 import "./About.css";
 
@@ -35,7 +34,7 @@ const About = () => {
       <div className="team">
         <img className="team-img" src={sanchitImg} alt="sanchit" />
         <div className="teammate">
-          <h1 className="hu">SANCHIT RAGHUWANSHI (Web Developer)</h1>
+          <h1 className="hu">SANCHIT RAGHUWANSHI (Full Stack Developer)</h1>
           <p className="about-p team-p">
             He is an experienced web developer who has a comprehensive
             understanding of both front-end and back-end development of websites
@@ -47,32 +46,7 @@ const About = () => {
 
       <div className="team">
         <div className="teammate">
-          <h1 className="hu">SAWI CHOUKIKAR (UI/UX Designer)</h1>
-          <p className="about-p team-p">
-            She is a skilled UI/UX designer who specializes in creating
-            intuitive and engaging user interfaces for web and mobile
-            applications and is proficient in using tools such as Sketch &
-            Figma.
-          </p>
-        </div>
-        <img className="team-img" src={sawiImg} alt="sawi" />
-      </div>
-
-      <div className="team">
-        <img className="team-img" src={shobhitImg} alt="shobhit" />
-        <div className="teammate">
-          <h1 className="hu">SHOBHIT RAGHUWANSHI (Project Manager)</h1>
-          <p className="about-p team-p">
-            He is passionate about art and design and uses his expertise in user
-            interface design, and user experience design to create websites that
-            are user centric, visually appealing and easy to navigate.
-          </p>
-        </div>
-      </div>
-
-      <div className="team">
-        <div className="teammate">
-          <h1 className="hu">SWAPNIL PAWAR (Web Content Writer)</h1>
+          <h1 className="hu">SWAPNIL PAWAR (Frontend Developer)</h1>
           <p className="about-p team-p">
             He is a skilled front-end developer & web content writer who combines creativity,
             technological know-how, and strategic thinking in a unique way. Has
@@ -84,16 +58,24 @@ const About = () => {
       </div>
 
       <div className="team">
-        <img className="team-img" src={sahilImg} alt="sahil" />
+        <img className="team-img" src={shobhitImg} alt="shobhit" />
         <div className="teammate">
-          <h1 className="hu">SAHIL KHEDA (Social media manager)</h1>
+          <h1 className="hu">SHOBHIT RAGHUWANSHI (UI/UX Designer)</h1>
           <p className="about-p team-p">
-            He possesses a good understanding of the latest trends in social
-            media platforms and algorithms and is committed to delivering
-            high-quality content that reflects the personality and values of
-            indusCampus.
+          He is a talented UI/UX designer, significantly contributed to the project by creating intuitive and engaging user interfaces.He skillfully combined user research, wireframes, and visual design to enhance user experience, ensuring seamless navigation and aesthetic appeal. Their expertise made the product both user-friendly and visually compelling.  
           </p>
         </div>
+      </div>
+
+
+      <div className="team">
+        <div className="teammate">
+          <h1 className="hu">SAHIL KHEDA (UI/UX Designer)</h1>
+          <p className="about-p team-p">
+          As a skilled UI/UX designer, He played a crucial role in the project's success. They focused on user research, crafted wireframes, and designed visually appealing interfaces, which improved the overall user experience. Their work ensured that the product was intuitive, easy to navigate, and aesthetically pleasing.
+          </p>
+        </div>
+        <img className="team-img" src={sahilImg} alt="sahil" />
       </div>
       <Footer />
     </div>

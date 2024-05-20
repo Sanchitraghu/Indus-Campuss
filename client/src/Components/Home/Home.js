@@ -9,7 +9,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const navigatGetButton=()=>{
-      navigate("/explore");
+      navigate("/auth");
   }
 
   const [text] = useTypewriter({
