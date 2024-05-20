@@ -41,11 +41,14 @@
 
 .card-heading1{
     margin-top : 22px;
+    padding-bottom : 5px;
     font-size : 40px;
+    background: -webkit-linear-gradient(45deg,rgba(255,255,255,1), rgba(88, 213, 218, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .p-card1{
     padding-right : 10px;
-    text-align : centre;
     color : rgba(88,213,218,0.75)
 
 }

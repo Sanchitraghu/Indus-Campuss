@@ -17,7 +17,8 @@ const CardComponent = ({ profileImg, heading, paragraph,setUserType }) => {
         <h2 className="card-heading1">{heading}</h2>
         <p className="p-card1" style ={{
     paddingLeft :"30px",
-    textAlign  : "centre"
+    textAlign  : "centre",
+    width : "100%"
 }}>{paragraph}</p>
       </div>
     </Link>
