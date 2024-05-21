@@ -4,6 +4,10 @@ import image from "../../assets/front.png";
 import { useNavigate } from 'react-router-dom';
 import {useTypewriter, Cursor} from 'react-simple-typewriter';
 import "./Home.css"
+import { graphArrayElements } from '../../utils/constant';
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const Home = () => {
   const navigate = useNavigate();
@@ -45,7 +49,19 @@ const Home = () => {
                   <img className='image' src={image} alt="img" />
           </div>
       </div>
-      
+      {
+        graphArrayElements?.map((item,ind)=> {
+          return   <div className='d-flex container-1 p-5'>
+        <div className='p-5'> 
+          <h1 style={{fontSize:"50px",display:"flex",justifyContent:"center",alignContent:"center"}}>{item?.heading}</h1>
+        </div>
+        <div style={{width:"90%"}}>
+        <Bar data={item?.data} options={item?.option} />;
+        </div>
+      </div>
+        })
+      }
+
     </div>
   )
 }
