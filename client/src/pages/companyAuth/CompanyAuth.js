@@ -17,10 +17,10 @@ const CompanyAuth = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {data:USER} = useSelector(state => state.authReducer)
-  
-  if(Boolean(USER)) {
-    navigate("/dashboard")
+  const { data: USER } = useSelector((state) => state.authReducer);
+
+  if (Boolean(USER)) {
+    navigate("/dashboard");
   }
 
   const handleSubmit = (e) => {
@@ -36,7 +36,7 @@ const CompanyAuth = () => {
         navigate("/explore");
       });
     } else {
-      let data = { email, password };
+      let data = { email, password, loginAs: selectedUserType };
       logIn(data, (err, res) => {
         if (err) return alert(err?.response?.data?.message);
         dispatch({ type: "SET_USER_DATA", data: res.data });

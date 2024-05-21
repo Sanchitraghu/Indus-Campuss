@@ -5,7 +5,7 @@ import {
   deleteProject,
   getUserProjects,
   postRequestedProjectCompany,
-  approveOrRejectProjectRequest,
+  approveOrRejectProjectRequest
 } from "../controllers/postProject.js";
 
 const router = express.Router();

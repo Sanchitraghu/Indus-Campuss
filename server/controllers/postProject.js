@@ -4,7 +4,6 @@ import mongoose from "mongoose";
 export const postProject = async (req, res) => {
   const postProjectData = req.body;
   const postProject = new Projects({ ...postProjectData });
-
   try {
     await postProject.save();
     res.status(200).json("Project is posted Successfully");
@@ -57,11 +56,11 @@ export const postRequestedProjectCompany = async (req, res) => {
       return res.status(404).json({ message: "Project Not Found" });
     }
 
-  let alreadyRequested =  project?.companyRequestedProject?.find((element)=> {
+    let alreadyRequested = project?.companyRequestedProject?.find((element) => {
       return element.universityEmail === details?.requestedCollegeEmail;
-    })
+    });
 
-    if(alreadyRequested) {
+    if (alreadyRequested) {
       return res.status(404).json({ message: "Project already Requested" });
     }
 
@@ -73,12 +72,9 @@ export const postRequestedProjectCompany = async (req, res) => {
     };
     const requestedProjects = project.companyRequestedProject;
     requestedProjects.push(object);
-     await Projects.findByIdAndUpdate(
-      projectId,
-      {
-        $set: { companyRequestedProject: requestedProjects },
-      }
-    );
+    await Projects.findByIdAndUpdate(projectId, {
+      $set: { companyRequestedProject: requestedProjects },
+    });
 
     return res.status(200).json({ message: "Successfully added" });
   } catch (err) {
@@ -87,22 +83,23 @@ export const postRequestedProjectCompany = async (req, res) => {
   }
 };
 
-
-export const approveOrRejectProjectRequest = async (req,res) => {
-  let {id,state,updatedProjectId} = req.body;
+export const approveOrRejectProjectRequest = async (req, res) => {
+  let { id, state, updatedProjectId } = req.body;
   const project = await Projects.findById(id);
   let approvedIndex = project?.companyRequestedProject?.findIndex((element) => {
-     return element.id === updatedProjectId;
+    return element.id === updatedProjectId;
   });
-  
-  const object = project?.companyRequestedProject[approvedIndex];
-  
-  object.state=state;
-  
-  project?.companyRequestedProject?.splice(approvedIndex,1,object);
 
-   await Projects.findByIdAndUpdate(id, {
-    $set : {companyRequestedProject : project?.companyRequestedProject}
-  })
-  res.status(200).json({message:"Successfully executed request"})
-}
+  const object = project?.companyRequestedProject[approvedIndex];
+
+  object.state = state;
+
+  project?.companyRequestedProject?.splice(approvedIndex, 1, object);
+
+  await Projects.findByIdAndUpdate(id, {
+    $set: { companyRequestedProject: project?.companyRequestedProject },
+  });
+  res.status(200).json({ message: "Successfully executed request" });
+};
+
+

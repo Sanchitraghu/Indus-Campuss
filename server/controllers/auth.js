@@ -15,7 +15,7 @@ export const signup = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      loginAs
+      loginAs,
     });
     const token = jwt.sign(
       { email: newUser.email, id: newUser._id },
@@ -31,7 +31,8 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password,loginAs } = req.body;
+
   try {
     const existinguser = await users.findOne({ email });
     if (!existinguser) {
@@ -39,7 +40,7 @@ export const login = async (req, res) => {
     }
     const isPasswordCrt = await bcrypt.compare(password, existinguser.password);
 
-    if (!isPasswordCrt) {
+    if (!isPasswordCrt || existinguser.loginAs !== loginAs) {
       return res.status(400).json({ message: "Invalid Credentials" });
     }
     const token = jwt.sign(
