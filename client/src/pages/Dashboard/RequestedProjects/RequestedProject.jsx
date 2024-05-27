@@ -40,8 +40,12 @@ const RequestedProject = (props) => {
   return (
     <div className="my-4">
       <p className=" fs-4">
-        <span className="text-info">Requested Project Name :</span>{" "}
+        <span className="text-info">Requested Project Name :</span>
         {props.projectName}
+      </p>
+      <p className=" fs-4">
+        <span className="text-info">IDEA For Problem Statement :</span>
+        {props?.idea}
       </p>
   {props.render}
       <p className=" fs-4">

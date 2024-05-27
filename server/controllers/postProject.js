@@ -69,6 +69,7 @@ export const postRequestedProjectCompany = async (req, res) => {
       projectName: details.projectTitle,
       universityEmail: details.requestedCollegeEmail,
       universityId: details.requestedCollegeId,
+      idea: details?.idea,
     };
     const requestedProjects = project.companyRequestedProject;
     requestedProjects.push(object);
@@ -101,5 +102,3 @@ export const approveOrRejectProjectRequest = async (req, res) => {
   });
   res.status(200).json({ message: "Successfully executed request" });
 };
-
-

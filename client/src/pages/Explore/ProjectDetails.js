@@ -1,18 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Avatar from "../../Components/Avatar/Avatar";
 import Navbar from "../../Components/Navbar_default/Navbar";
-import copy from "copy-to-clipboard";
 import moment from "moment";
 import { markupText } from "../../utils";
 import { postRequestedProjectForCompany } from "../../api/project";
 
 const ProjectDetails = () => {
-  const { id } = useParams();
+  const [ideaToSolveProblemStatement, setIdeaToSolveProblemStatement] =
+    useState("");
 
-  const url = "http://localhost:3000";
-  const location = useLocation();
+  const { id } = useParams();
 
   const { data } = useSelector((state) => state.projectReducer);
   const { data: User } = useSelector((state) => state.authReducer);
@@ -26,12 +25,11 @@ const ProjectDetails = () => {
     }
   };
 
-  const handleShare = () => {
-    copy(url + location.pathname);
-    alert("Copied url : " + url + location.pathname);
-  };
-
   const handleUniversityProjectRequest = (project) => {
+    if (!ideaToSolveProblemStatement) {
+      alert("Give the Title and Idea both");
+      return;
+    }
     let projectDetails = {
       projectId: project?._id,
       details: {
@@ -39,15 +37,16 @@ const ProjectDetails = () => {
         projectTitle: project?.projectTitle,
         requestedCollegeEmail: User?.result?.email,
         requestedCollegeId: User?.result?._id,
+        idea: ideaToSolveProblemStatement,
       },
     };
     postRequestedProjectForCompany(projectDetails, (err, res) => {
       if (err) {
-        alert("Already Requested For This project")
+        alert("Already Requested For This project");
         return;
       }
-      if(res.status === 200) {
-        alert("Request Sent to the Company for this project")
+      if (res.status === 200) {
+        alert("Request Sent to the Company for this project");
         return;
       }
     });
@@ -80,58 +79,132 @@ const ProjectDetails = () => {
                             ))}
                           </div>
                           <div className="question-actions-user">
-                            
-                            <div style={{display:"flex",flexDirection:"column",rowGap:"5px"}}>
-                            <div style={{border:"2px solid rgba(88, 213, 218)", borderRadius:"5px",textAlign:"centre"}}>
-                              <button onClick={handleShare} type="buttonn" style={{width :"100%"}}>
-                                Share
-                              </button>
-                            </div>
-                            {User?.result?.loginAs === "College" && (
-                              <div style={{border:"2px solid rgba(88, 213, 218)", borderRadius:"5px",textAlign:"centre"}}>
-                                <button
-                                  onClick={(e) => {
-                                    handleUniversityProjectRequest(question);
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                rowGap: "5px",
+                              }}
+                            >
+                              {User?.result?.loginAs === "College" && (
+                                <div
+                                  style={{
+                                    border: "2px solid rgba(88, 213, 218)",
+                                    borderRadius: "5px",
+                                    textAlign: "centre",
                                   }}
-                                  type="buttonn"  style={{width :"100%"}}
                                 >
-                                  Request Project
-                                </button>
+                                  <button
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal"
+                                    type="buttonn"
+                                    style={{ width: "100%" }}
+                                  >
+                                    Request Project
+                                  </button>
+                                </div>
+                              )}
+                              <div
+                                class="modal fade"
+                                id="exampleModal"
+                                tabindex="-1"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                              >
+                                <div class="modal-dialog bg-secondary">
+                                  <div
+                                    class="modal-content"
+                                    data-bs-theme="dark"
+                                  >
+                                    <div class="modal-header">
+                                      <p
+                                        class="modal-title fs-5 text-secondary"
+                                        id="exampleModalLabel"
+                                      >
+                                        IDEA To Solve the Problem Statement
+                                      </p>
+                                      <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                      ></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form>
+                                        <div class="mb-3">
+                                          <label
+                                            for="message-text"
+                                            class="col-form-label"
+                                          >
+                                            IDEA
+                                          </label>
+                                          <textarea
+                                            onChange={(e) =>
+                                              setIdeaToSolveProblemStatement(
+                                                e.target.value
+                                              )
+                                            }
+                                            class="form-control"
+                                            id="message-text"
+                                          ></textarea>
+                                        </div>
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer d-flex gap-3">
+                                      <button
+                                        type="button"
+                                        class="btn btn-secondary px-3 py-1"
+                                        data-bs-dismiss="modal"
+                                      >
+                                        Close
+                                      </button>
+                                      <button
+                                        type="button"
+                                        onClick={(e) => {
+                                          handleUniversityProjectRequest(
+                                            question
+                                          );
+                                        }}
+                                        class="btn btn-outline-success px-3 py-1"
+                                      >
+                                        Request Project
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            )}
                             </div>
 
                             <div>
-                             <div>
-                              <p>
-                                posted {moment(question.postedOn).fromNow()}
-                              </p>
-                              <Link
-                                className="user-link"
-                                style={{ color: "#0086d8" }}
-                              >
-                                <Avatar
-                                  marginTop="10px"
-                                  marginLeft="0px"
-                                  backgroundColor="orange"
-                                  px="8px"
-                                  py="5px"
-                                  character={question.userPosted
-                                    .charAt(0)
-                                    .toUpperCase()}
-                                />
-                                <div>{question.userPosted}</div>
-                              </Link>
-                              <a
-                                style={{ color: "#009dff" }}
-                                href={`mailto:${question.email}?subject = Feedback&body = Message"`}
-                              >
-                                {question.email}
-                              </a>
+                              <div>
+                                <p>
+                                  posted {moment(question.postedOn).fromNow()}
+                                </p>
+                                <Link
+                                  className="user-link"
+                                  style={{ color: "#0086d8" }}
+                                >
+                                  <Avatar
+                                    marginTop="10px"
+                                    marginLeft="0px"
+                                    backgroundColor="orange"
+                                    px="8px"
+                                    py="5px"
+                                    character={question.userPosted
+                                      .charAt(0)
+                                      .toUpperCase()}
+                                  />
+                                  <div>{question.userPosted}</div>
+                                </Link>
+                                <a
+                                  style={{ color: "#009dff" }}
+                                  href={`mailto:${question.email}?subject = Feedback&body = Message"`}
+                                >
+                                  {question.email}
+                                </a>
                               </div>
                             </div>
-                           
-                           
                           </div>
                         </div>
                       </div>

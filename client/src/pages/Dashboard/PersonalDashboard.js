@@ -6,12 +6,11 @@ import UserProject from "./userPostedProject/userProjectHome";
 import RequestedProject from "./RequestedProjects/RequestedProject";
 import dashBgImg from "../../assets/dashboard images/dashboard-background-img.png";
 import DBprofileIcon from "../../assets/dashboard images/DB-profile-icon.png"
-
+import Rating from "../../assets/Rating2.png"
 const PersonalDashboard = () => {
   // useSelector Hook se mill jayega sb
 
   const { data } = useSelector((state) => state.authReducer);
-  console.log(data)
   const navigate = useNavigate();
 
   const handleEditClick = () => {
@@ -31,12 +30,17 @@ const PersonalDashboard = () => {
                 <img src ={DBprofileIcon} style={{width :"100%", height:"100%", objectFit:"contain"}} alt="DB-profile-logo"/>
               </div>
               <div className="Name-Email" style={{width:"80%",background :"rgba(0, 29, 30, 1)",boxShadow: "0 5px 15px #58D5DA", position:"absolute", left :"18%",right : "20%", bottom:"-23%", backdropFilter:"blur",borderRadius:'20px',}}>
+                <div className="d-flex justify-content-between align-items-center">
+                  <div>
                 <p className="client-name" style={{margin :"7px 0px 1px 40px", fontSize:"20px", color:"#58d5da"}}>
                 {data?.result?.loginAs} Name : <span>{data?.result?.name}</span>
                 </p>
                 <p className="mail-address" style={{margin :"1px 0px 8px 40px",fontSize:"20px", color:"#58d5da"}}>
                 {data?.result?.loginAs} Email : <span>{data?.result?.email}</span>
                 </p>
+                  </div>
+                 <p className="mx-4"><img className="rating mt-3" src={Rating} /></p> 
+                </div>
               </div>
             </div>
           </div>
